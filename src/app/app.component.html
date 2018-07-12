@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="header-search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search by Full Name" [(ngModel)]="searchtext">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" (click)="child.searchBurger(searchtext)">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-home></app-home>
+
+<!-- <app-order-details></app-order-details> -->

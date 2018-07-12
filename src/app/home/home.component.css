@@ -1,0 +1,53 @@
+
+.btn1{
+  margin: 8px;
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
+  border: 1px solid black;
+  font-size: 14px;
+  padding: 4px 8px;
+  outline: 0;
+}
+.btn1.active{
+  color:#fff;
+  background: #000;
+  border-color: #ffffff;
+}
+.product-item {
+  text-align: center;
+  margin: 8px;
+}
+.shoppingCart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  background: #333369;
+  padding: 14px;
+  letter-spacing: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+.shoppingCartMenu{
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  border: 1px solid #eee;
+  width: 200px;
+  height: 300px;
+  z-index: 9;
+  background: #fff;
+}
+.cartContainer{
+  overflow: auto;
+  height: 200px;
+}
+.cartItem{
+  text-align: center;
+  padding: 4px;
+  border-top: 1px solid #eee;
+}
+.text-center{
+  text-align: center;
+}
