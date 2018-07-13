@@ -1,0 +1,19 @@
+.shoppingCartMenu{
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  border: 1px solid #eee;
+  width: 200px;
+  height: 300px;
+  z-index: 9;
+  background: #fff;
+}
+.cartContainer{
+  overflow: auto;
+  height: 200px;
+}
+.cartItem{
+  text-align: center;
+  padding: 4px;
+  border-top: 1px solid #eee;
+}

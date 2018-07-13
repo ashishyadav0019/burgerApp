@@ -1,27 +1,14 @@
-
-.btn1{
-  margin: 8px;
-  border-radius: 8px;
-  background: transparent;
-  box-shadow: none;
-  border: 1px solid black;
-  font-size: 14px;
-  padding: 4px 8px;
-  outline: 0;
-}
-.btn1.active{
-  color:#fff;
-  background: #000;
-  border-color: #ffffff;
+.home {
+  position: relative;
 }
 .product-item {
   text-align: center;
   margin: 8px;
 }
 .shoppingCart {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   z-index: 10;
   background: #333369;
   padding: 14px;
@@ -29,25 +16,7 @@
   color: #fff;
   cursor: pointer;
 }
-.shoppingCartMenu{
-  position: fixed;
-  bottom: 70px;
-  right: 20px;
-  border: 1px solid #eee;
-  width: 200px;
-  height: 300px;
-  z-index: 9;
-  background: #fff;
+.items {
+  height: 160px;
 }
-.cartContainer{
-  overflow: auto;
-  height: 200px;
-}
-.cartItem{
-  text-align: center;
-  padding: 4px;
-  border-top: 1px solid #eee;
-}
-.text-center{
-  text-align: center;
-}
+

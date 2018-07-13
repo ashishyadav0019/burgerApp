@@ -1,0 +1,12 @@
+<div class="shoppingCartMenu" *ngIf="showCart==true">
+  <h4 class="text-center">ITEMS in cart: {{orderListLength}} </h4>
+  <div class="cartContainer">
+    <div class="cartItem" *ngFor="let item of orderList "> {{item.name}}</div>
+  </div>
+  <div *ngIf="orderListLength==0" class="text-center">Nothing in cart</div>
+
+  <div *ngIf="orderListLength>0" class="text-center" (click)="placeOrder()">
+    <button class="btn1">Place Order</button>
+  </div>
+
+</div>

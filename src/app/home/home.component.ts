@@ -8,8 +8,8 @@ import { ApiHandler } from '../services/apiHandler';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  burgerlist: Object[] = [];
-  searchtext: string;
+  burgerList: Object[] = [];
+  searchText: string;
   burgerOriginalList: Object[] = [];
   priceRange: string[];
   foodCategory: string[];
@@ -26,19 +26,17 @@ export class HomeComponent implements OnInit {
     this.ratings = [5, 4, 3, 2, 1];
     this.foodCategory = ['veg', 'non veg'];
 
-    this.restService.getBurgetList().subscribe((response: any) => {
-      console.log(response);
-      this.burgerlist = response;
+    this.restService.getBurgetList()
+      .subscribe((response: any) => {
+      this.burgerList = response;
       this.burgerOriginalList = response;
     }, (err) => {
-      console.log(err);
       alert("Internal server error");
     });
   }
 
 
   onFilterChange(data, filterType) {
-
     this.selectedType = data; let arr;
     if (filterType === 'category') {
       arr = this.burgerOriginalList.filter((item: any) => {
@@ -49,7 +47,8 @@ export class HomeComponent implements OnInit {
     else if (filterType === 'price') {
       let amount = data.split('-');
       arr = this.burgerOriginalList.filter((item: any) => {
-        if (parseFloat(item.discountedPrice) >= parseFloat(amount[0]) && parseFloat(item.discountedPrice) <= parseFloat(amount[1]))
+        if (parseFloat(item.discountedPrice) >= parseFloat(amount[0])
+          && parseFloat(item.discountedPrice) <= parseFloat(amount[1]))
           return item;
       })
     }
@@ -61,38 +60,31 @@ export class HomeComponent implements OnInit {
       })
     }
 
-    this.burgerlist = arr;
+    this.burgerList = arr;
 
   }
 
   clearFilters(){
     this.selectedType='';
-    this.burgerlist = this.burgerOriginalList;
+    this.burgerList = this.burgerOriginalList;
   }
 
   searchBurger(str) {
-    if (str && this.burgerlist.length) {
+    if (str && this.burgerList.length) {
       let arr = this.burgerOriginalList.filter((item: any) => {
         if (item.name.toLowerCase() === str.toLowerCase())
           return item;
-      })
-      console.log(arr)
-      this.burgerlist = arr;
+      });
+      this.burgerList = arr;
     }
     else {
-      this.burgerlist = this.burgerOriginalList;
+      this.burgerList = this.burgerOriginalList;
     }
   }
 
   addItem(item) {
-
     this.orderList.push(item);
     this.orderListLength = this.orderList.length;
   }
-
-  placeOrder(){
-    alert('Order Placed')
-  }
-
 
 }
